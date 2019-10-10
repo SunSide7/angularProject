@@ -1,24 +1,9 @@
 <h1>You are the best!</h1>
 
-<button (click)="backgroundToggle = !backgroundToggle">Toggle</button>
+<button (click)="toggle = !toggle">Toggle</button>
 
-<!-- <div [ngStyle]="{
-	width: '200px',
-	height: '200px',
-	borderRadius: '5px',
-	border: '1px solid #ccc',
-	background: backgroundToggle ? 'blue' : 'yellow'
-}">
-</div> -->
+<p *ngIf="toggle; else blueP" class="red">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, sit?</p>
 
-<!-- <p [ngClass]="{
-	red: backgroundToggle,
-	blue: !backgroundToggle
-
-}">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, voluptatum.</p> -->
-
-<p 
-	[class.blue]="!backgroundToggle"
-	[class.red]="backgroundToggle"
-
->Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor, sint.</p>
+<ng-template #blueP>
+	<p class="blue">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat, possimus.</p>
+</ng-template>
