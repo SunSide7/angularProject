@@ -1,14 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import { AppCounterService } from './services/app-counter.service'
+import { AppCounterService } from './services/app-counter.service';
+import { LocalCounterService } from './services/local-counter.service'
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.sass']
+  styleUrls: ['./app.component.sass'],
+  providers: [LocalCounterService]
 })
 export class AppComponent {
 
-	constructor(private appCounterService: AppCounterService) {
+	constructor(
+		private appCounterService: AppCounterService,
+		private localCounterService: LocalCounterService
+	) {
 
 	}
 
